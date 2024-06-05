@@ -15,7 +15,6 @@ namespace DcdLesson06.Models
         [DisplayName("tiêu đề")]
         public string DcdTitle { get; set; }
         [Required (ErrorMessage ="Dcd: hãy nhập tác giả ")]
-        [DisplayName("tác giả")]
         public string DcdAuthor { get; set; }
         [Required (ErrorMessage ="Dcd: hãy nhập nghệ sĩ ")]
         [StringLength (50,MinimumLength =2,ErrorMessage ="Dcd: tên nghệ sĩ tối thiêu 2 ký tự,tối đa 50 ")]
