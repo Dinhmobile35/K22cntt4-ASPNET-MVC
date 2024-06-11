@@ -1,0 +1,69 @@
+﻿@model IEnumerable<DcdLesson06CF.Models.DcdBook>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DcdBookId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DcdTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DcdAuthor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DcdYear)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DcdPulisher)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DcdPicture)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DcdCategoryId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DcdBookId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DcdTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DcdAuthor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DcdYear)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DcdPulisher)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DcdPicture)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DcdCategoryId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DcdId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DcdId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DcdId })
+        </td>
+    </tr>
+}
+
+</table>

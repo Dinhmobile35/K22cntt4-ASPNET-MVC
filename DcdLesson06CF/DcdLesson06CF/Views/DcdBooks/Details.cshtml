@@ -1,0 +1,74 @@
+﻿@model DcdLesson06CF.Models.DcdBook
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DcdBook</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DcdBookId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DcdBookId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DcdTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DcdTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DcdAuthor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DcdAuthor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DcdYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DcdYear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DcdPulisher)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DcdPulisher)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DcdPicture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DcdPicture)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DcdCategoryId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DcdCategoryId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DcdId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

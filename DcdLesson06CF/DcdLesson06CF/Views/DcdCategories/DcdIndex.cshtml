@@ -1,0 +1,33 @@
+﻿@model IEnumerable<DcdLesson06CF.Models.DcdCategory>
+
+@{
+    ViewBag.Title = "DcdIndex";
+}
+
+<h2>DcdIndex</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DcdCategoryName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DcdCategoryName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DcdId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DcdId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DcdId })
+        </td>
+    </tr>
+}
+
+</table>

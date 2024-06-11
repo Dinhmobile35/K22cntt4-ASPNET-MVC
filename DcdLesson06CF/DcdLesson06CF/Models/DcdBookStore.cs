@@ -8,10 +8,9 @@ namespace DcdLesson06CF.Models
 {
     public class DcdBookStore:DbContext
     {
-        public DcdBookStore():base() { }
-
-        //khai báo các thuộc tính tương ứng với các bảng csdl 
-        public DbSet<DcdCategory> DcdCategories { get; set; }
-        public DbSet<DcdBook> DcdBooks { get; set; }
+        public DcdBookStore() : base() { }
+        //khai báo thuộc tính tương ứng với các bảng trong cơ sở dữ liệu 
+        public DbSet<DcdCategory>  DcdCategories { get; set; }
+        public DbSet<DcdBook>DcdBooks { get; set; }
     }
 }
