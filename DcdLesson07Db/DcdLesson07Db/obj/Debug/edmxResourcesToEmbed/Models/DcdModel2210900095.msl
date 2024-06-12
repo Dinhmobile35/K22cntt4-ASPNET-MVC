@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DcdK22CNT4Lesson07DbModelStoreContainer" CdmEntityContainer="DcdK22CNT4Lesson07DbEntities">
+    <EntitySetMapping Name="dcdKhoa">
+      <EntityTypeMapping TypeName="DcdK22CNT4Lesson07DbModel.dcdKhoa">
+        <MappingFragment StoreEntitySet="dcdKhoa">
+          <ScalarProperty Name="DcdMaKH" ColumnName="DcdMaKH" />
+          <ScalarProperty Name="DcdTenKH" ColumnName="DcdTenKH" />
+          <ScalarProperty Name="DcdTrangThai" ColumnName="DcdTrangThai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dcdSinhVien">
+      <EntityTypeMapping TypeName="DcdK22CNT4Lesson07DbModel.dcdSinhVien">
+        <MappingFragment StoreEntitySet="dcdSinhVien">
+          <ScalarProperty Name="DcdMaSV" ColumnName="DcdMaSV" />
+          <ScalarProperty Name="DcdHoSV" ColumnName="DcdHoSV" />
+          <ScalarProperty Name="DcdTenSv" ColumnName="DcdTenSv" />
+          <ScalarProperty Name="DcdNgaySinh" ColumnName="DcdNgaySinh" />
+          <ScalarProperty Name="DcdPhai" ColumnName="DcdPhai" />
+          <ScalarProperty Name="DcdPhone" ColumnName="DcdPhone" />
+          <ScalarProperty Name="DcdEmail" ColumnName="DcdEmail" />
+          <ScalarProperty Name="DcdMaKH" ColumnName="DcdMaKH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
