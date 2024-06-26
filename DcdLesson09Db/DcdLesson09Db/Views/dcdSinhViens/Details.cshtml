@@ -1,0 +1,82 @@
+﻿@model DcdLesson09Db.Models.dcdSinhVien
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>dcdSinhVien</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DcdHoSV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DcdHoSV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DcdTenSV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DcdTenSV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DcdPhai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DcdPhai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DcdNgaySinh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DcdNgaySinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DcdNoiSinh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DcdNoiSinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DcdHocBong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DcdHocBong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DcdDiemTrungBinh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DcdDiemTrungBinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dcdKhoa.DcdTenKH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dcdKhoa.DcdTenKH)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DcdMaSV }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

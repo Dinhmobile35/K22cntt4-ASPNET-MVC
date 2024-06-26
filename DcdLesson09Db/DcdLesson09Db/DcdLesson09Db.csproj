@@ -128,37 +128,40 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\dcdKetQuasController.cs" />
     <Compile Include="Controllers\dcdKhoasController.cs" />
+    <Compile Include="Controllers\dcdMonHocsController.cs" />
+    <Compile Include="Controllers\dcdSinhViensController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\dcdKetQua.cs">
+      <DependentUpon>dcdmodel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\dcdKhoa.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>dcdmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\dcdmodel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dcdmodel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\dcdmodel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dcdmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\dcdmodel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dcdmodel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\dcdMonHoc.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>dcdmodel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\dcdSinhVien.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sysdiagrams.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>dcdmodel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -171,24 +174,24 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\Model1.Context.tt">
+    <Content Include="Models\dcdmodel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>dcdmodel.edmx</DependentUpon>
+      <LastGenOutput>dcdmodel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Model1.tt">
+    <Content Include="Models\dcdmodel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
+      <DependentUpon>dcdmodel.edmx</DependentUpon>
+      <LastGenOutput>dcdmodel.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\Model1.edmx">
+    <EntityDeploy Include="Models\dcdmodel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+      <LastGenOutput>dcdmodel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
+    <Content Include="Models\dcdmodel.edmx.diagram">
+      <DependentUpon>dcdmodel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -220,6 +223,21 @@
     <Content Include="Views\dcdKhoas\Details.cshtml" />
     <Content Include="Views\dcdKhoas\Edit.cshtml" />
     <Content Include="Views\dcdKhoas\Index.cshtml" />
+    <Content Include="Views\dcdMonHocs\Create.cshtml" />
+    <Content Include="Views\dcdMonHocs\Delete.cshtml" />
+    <Content Include="Views\dcdMonHocs\Details.cshtml" />
+    <Content Include="Views\dcdMonHocs\Edit.cshtml" />
+    <Content Include="Views\dcdMonHocs\Index.cshtml" />
+    <Content Include="Views\dcdSinhViens\Create.cshtml" />
+    <Content Include="Views\dcdSinhViens\Delete.cshtml" />
+    <Content Include="Views\dcdSinhViens\Details.cshtml" />
+    <Content Include="Views\dcdSinhViens\Edit.cshtml" />
+    <Content Include="Views\dcdSinhViens\Index.cshtml" />
+    <Content Include="Views\dcdKetQuas\Create.cshtml" />
+    <Content Include="Views\dcdKetQuas\Delete.cshtml" />
+    <Content Include="Views\dcdKetQuas\Details.cshtml" />
+    <Content Include="Views\dcdKetQuas\Edit.cshtml" />
+    <Content Include="Views\dcdKetQuas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

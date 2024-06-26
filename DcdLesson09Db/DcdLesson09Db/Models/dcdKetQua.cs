@@ -12,12 +12,13 @@ namespace DcdLesson09Db.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagrams
+    public partial class dcdKetQua
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public string dcdMaSV { get; set; }
+        public string dcdMaMH { get; set; }
+        public Nullable<decimal> Diem { get; set; }
+    
+        public virtual dcdMonHoc dcdMonHoc { get; set; }
+        public virtual dcdSinhVien dcdSinhVien { get; set; }
     }
 }

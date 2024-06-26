@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\K22CNTT4-ASPNET MVC\K22cntt4-ASPNET-MVC\DcdLesson09Db\DcdLesson09Db\Models\Model1.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\K22CNTT4-ASPNET MVC\K22cntt4-ASPNET-MVC\DcdLesson09Db\DcdLesson09Db\Models\dcdmodel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

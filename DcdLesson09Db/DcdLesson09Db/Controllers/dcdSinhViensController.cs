@@ -10,107 +10,112 @@ using DcdLesson09Db.Models;
 
 namespace DcdLesson09Db.Controllers
 {
-    public class dcdKhoasController : Controller
+    public class dcdSinhViensController : Controller
     {
         private DcdK22CNT4Lesson09DbEntities5 db = new DcdK22CNT4Lesson09DbEntities5();
 
-        // GET: dcdKhoas
+        // GET: dcdSinhViens
         public ActionResult Index()
         {
-            return View(db.dcdKhoa.ToList());
+            var dcdSinhVien = db.dcdSinhVien.Include(d => d.dcdKhoa);
+            return View(dcdSinhVien.ToList());
         }
 
-        // GET: dcdKhoas/Details/5
+        // GET: dcdSinhViens/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            dcdKhoa dcdKhoa = db.dcdKhoa.Find(id);
-            if (dcdKhoa == null)
+            dcdSinhVien dcdSinhVien = db.dcdSinhVien.Find(id);
+            if (dcdSinhVien == null)
             {
                 return HttpNotFound();
             }
-            return View(dcdKhoa);
+            return View(dcdSinhVien);
         }
 
-        // GET: dcdKhoas/Create
+        // GET: dcdSinhViens/Create
         public ActionResult Create()
         {
+            ViewBag.DcdMaKH = new SelectList(db.dcdKhoa, "DcdMaKH", "DcdTenKH");
             return View();
         }
 
-        // POST: dcdKhoas/Create
+        // POST: dcdSinhViens/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "DcdMaKH,DcdTenKH")] dcdKhoa dcdKhoa)
+        public ActionResult Create([Bind(Include = "DcdMaSV,DcdHoSV,DcdTenSV,DcdPhai,DcdNgaySinh,DcdNoiSinh,DcdMaKH,DcdHocBong,DcdDiemTrungBinh")] dcdSinhVien dcdSinhVien)
         {
             if (ModelState.IsValid)
             {
-                db.dcdKhoa.Add(dcdKhoa);
+                db.dcdSinhVien.Add(dcdSinhVien);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(dcdKhoa);
+            ViewBag.DcdMaKH = new SelectList(db.dcdKhoa, "DcdMaKH", "DcdTenKH", dcdSinhVien.DcdMaKH);
+            return View(dcdSinhVien);
         }
 
-        // GET: dcdKhoas/Edit/5
+        // GET: dcdSinhViens/Edit/5
         public ActionResult Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            dcdKhoa dcdKhoa = db.dcdKhoa.Find(id);
-            if (dcdKhoa == null)
+            dcdSinhVien dcdSinhVien = db.dcdSinhVien.Find(id);
+            if (dcdSinhVien == null)
             {
                 return HttpNotFound();
             }
-            return View(dcdKhoa);
+            ViewBag.DcdMaKH = new SelectList(db.dcdKhoa, "DcdMaKH", "DcdTenKH", dcdSinhVien.DcdMaKH);
+            return View(dcdSinhVien);
         }
 
-        // POST: dcdKhoas/Edit/5
+        // POST: dcdSinhViens/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "DcdMaKH,DcdTenKH")] dcdKhoa dcdKhoa)
+        public ActionResult Edit([Bind(Include = "DcdMaSV,DcdHoSV,DcdTenSV,DcdPhai,DcdNgaySinh,DcdNoiSinh,DcdMaKH,DcdHocBong,DcdDiemTrungBinh")] dcdSinhVien dcdSinhVien)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(dcdKhoa).State = EntityState.Modified;
+                db.Entry(dcdSinhVien).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(dcdKhoa);
+            ViewBag.DcdMaKH = new SelectList(db.dcdKhoa, "DcdMaKH", "DcdTenKH", dcdSinhVien.DcdMaKH);
+            return View(dcdSinhVien);
         }
 
-        // GET: dcdKhoas/Delete/5
+        // GET: dcdSinhViens/Delete/5
         public ActionResult Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            dcdKhoa dcdKhoa = db.dcdKhoa.Find(id);
-            if (dcdKhoa == null)
+            dcdSinhVien dcdSinhVien = db.dcdSinhVien.Find(id);
+            if (dcdSinhVien == null)
             {
                 return HttpNotFound();
             }
-            return View(dcdKhoa);
+            return View(dcdSinhVien);
         }
 
-        // POST: dcdKhoas/Delete/5
+        // POST: dcdSinhViens/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            dcdKhoa dcdKhoa = db.dcdKhoa.Find(id);
-            db.dcdKhoa.Remove(dcdKhoa);
+            dcdSinhVien dcdSinhVien = db.dcdSinhVien.Find(id);
+            db.dcdSinhVien.Remove(dcdSinhVien);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

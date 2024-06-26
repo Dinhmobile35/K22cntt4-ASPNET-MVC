@@ -1,0 +1,45 @@
+﻿@model IEnumerable<DcdLesson09Db.Models.dcdKetQua>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Diem)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dcdMonHoc.DcdTenMH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dcdSinhVien.DcdHoSV)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Diem)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dcdMonHoc.DcdTenMH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dcdSinhVien.DcdHoSV)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.dcdMaSV }) |
+            @Html.ActionLink("Details", "Details", new { id=item.dcdMaSV }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.dcdMaSV })
+        </td>
+    </tr>
+}
+
+</table>

@@ -13,10 +13,10 @@ namespace DcdLesson09Db.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DcdK22CNT4Lesson09DbEntities4 : DbContext
+    public partial class DcdK22CNT4Lesson09DbEntities5 : DbContext
     {
-        public DcdK22CNT4Lesson09DbEntities4()
-            : base("name=DcdK22CNT4Lesson09DbEntities4")
+        public DcdK22CNT4Lesson09DbEntities5()
+            : base("name=DcdK22CNT4Lesson09DbEntities5")
         {
         }
     
@@ -25,9 +25,9 @@ namespace DcdLesson09Db.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<dcdKetQua> dcdKetQua { get; set; }
         public virtual DbSet<dcdKhoa> dcdKhoa { get; set; }
         public virtual DbSet<dcdMonHoc> dcdMonHoc { get; set; }
         public virtual DbSet<dcdSinhVien> dcdSinhVien { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     }
 }

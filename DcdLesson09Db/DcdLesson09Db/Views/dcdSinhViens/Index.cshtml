@@ -1,0 +1,75 @@
+﻿@model IEnumerable<DcdLesson09Db.Models.dcdSinhVien>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DcdHoSV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DcdTenSV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DcdPhai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DcdNgaySinh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DcdNoiSinh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DcdHocBong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DcdDiemTrungBinh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dcdKhoa.DcdTenKH)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DcdHoSV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DcdTenSV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DcdPhai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DcdNgaySinh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DcdNoiSinh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DcdHocBong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DcdDiemTrungBinh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dcdKhoa.DcdTenKH)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DcdMaSV }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DcdMaSV }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DcdMaSV })
+        </td>
+    </tr>
+}
+
+</table>

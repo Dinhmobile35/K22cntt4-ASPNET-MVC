@@ -24,6 +24,7 @@ namespace DcdLesson09Db.Models
         public string DcdHocBong { get; set; }
         public Nullable<decimal> DcdDiemTrungBinh { get; set; }
     
+        public virtual dcdKetQua dcdKetQua { get; set; }
         public virtual dcdKhoa dcdKhoa { get; set; }
     }
 }

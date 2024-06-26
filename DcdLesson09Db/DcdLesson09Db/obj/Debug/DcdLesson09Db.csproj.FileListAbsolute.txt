@@ -72,7 +72,6 @@ C:\K22CNTT4-ASPNET MVC\K22cntt4-ASPNET-MVC\DcdLesson09Db\DcdLesson09Db\bin\Syste
 C:\K22CNTT4-ASPNET MVC\K22cntt4-ASPNET-MVC\DcdLesson09Db\DcdLesson09Db\bin\Newtonsoft.Json.xml
 C:\K22CNTT4-ASPNET MVC\K22cntt4-ASPNET-MVC\DcdLesson09Db\DcdLesson09Db\bin\Antlr3.Runtime.pdb
 C:\K22CNTT4-ASPNET MVC\K22cntt4-ASPNET-MVC\DcdLesson09Db\DcdLesson09Db\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\K22CNTT4-ASPNET MVC\K22cntt4-ASPNET-MVC\DcdLesson09Db\DcdLesson09Db\obj\Debug\DcdLesson09Db.csproj.AssemblyReference.cache
 C:\K22CNTT4-ASPNET MVC\K22cntt4-ASPNET-MVC\DcdLesson09Db\DcdLesson09Db\obj\Debug\DcdLesson09Db.csproj.CoreCompileInputs.cache
 C:\K22CNTT4-ASPNET MVC\K22cntt4-ASPNET-MVC\DcdLesson09Db\DcdLesson09Db\obj\Debug\DcdLesson09Db.csproj.CopyComplete
 C:\K22CNTT4-ASPNET MVC\K22cntt4-ASPNET-MVC\DcdLesson09Db\DcdLesson09Db\obj\Debug\DcdLesson09Db.dll

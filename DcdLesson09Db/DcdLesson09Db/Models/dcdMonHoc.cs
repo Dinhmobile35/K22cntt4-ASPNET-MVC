@@ -14,7 +14,16 @@ namespace DcdLesson09Db.Models
     
     public partial class dcdMonHoc
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public dcdMonHoc()
+        {
+            this.dcdKetQua = new HashSet<dcdKetQua>();
+        }
+    
         public string DcdMaMH { get; set; }
         public string DcdTenMH { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<dcdKetQua> dcdKetQua { get; set; }
     }
 }

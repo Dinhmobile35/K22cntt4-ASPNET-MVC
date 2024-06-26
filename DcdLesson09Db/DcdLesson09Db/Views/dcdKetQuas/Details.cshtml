@@ -1,0 +1,42 @@
+﻿@model DcdLesson09Db.Models.dcdKetQua
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>dcdKetQua</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Diem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Diem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dcdMonHoc.DcdTenMH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dcdMonHoc.DcdTenMH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dcdSinhVien.DcdHoSV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dcdSinhVien.DcdHoSV)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.dcdMaSV }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
