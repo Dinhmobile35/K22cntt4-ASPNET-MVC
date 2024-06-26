@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DcdK22CNT4Lesson09DbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'DcdK22CNT4Lesson09Db.dbo.dcdKetQua' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="dcdKetQua">
+          <Property Name="DcdMaSV" Type="char" MaxLength="10" />
+          <Property Name="DcdMaMH" Type="char" MaxLength="10" />
+          <Property Name="DcdDiem" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>-->
+  <EntityType Name="dcdKhoa">
+    <Key>
+      <PropertyRef Name="DcdMaKH" />
+    </Key>
+    <Property Name="DcdMaKH" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="DcdTenKH" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="dcdMonHoc">
+    <Key>
+      <PropertyRef Name="DcdMaMH" />
+    </Key>
+    <Property Name="DcdMaMH" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="DcdTenMH" Type="char" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="dcdSinhVien">
+    <Key>
+      <PropertyRef Name="DcdMaSV" />
+    </Key>
+    <Property Name="DcdMaSV" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="DcdHoSV" Type="nvarchar" MaxLength="50" />
+    <Property Name="DcdTenSV" Type="nvarchar" MaxLength="50" />
+    <Property Name="DcdPhai" Type="char" MaxLength="10" />
+    <Property Name="DcdNgaySinh" Type="date" />
+    <Property Name="DcdNoiSinh" Type="nvarchar" MaxLength="50" />
+    <Property Name="DcdMaKH" Type="char" MaxLength="10" />
+    <Property Name="DcdHocBong" Type="char" MaxLength="10" />
+    <Property Name="DcdDiemTrungBinh" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+error 6004: The table 'DcdK22CNT4Lesson09Db.dbo.dcdKetQua' is referenced by a relationship, but cannot be found.
+        <Association Name="FK_dcdKetQua_dcdMonHoc" />-->
+  <!--Errors Found During Generation:
+error 6004: The table 'DcdK22CNT4Lesson09Db.dbo.dcdKetQua' is referenced by a relationship, but cannot be found.
+        <Association Name="FK_dcdKetQua_dcdSinhVien" />-->
+  <Association Name="FK_dcdSinhVien_dcdKhoa">
+    <End Role="dcdKhoa" Type="Self.dcdKhoa" Multiplicity="0..1" />
+    <End Role="dcdSinhVien" Type="Self.dcdSinhVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="dcdKhoa">
+        <PropertyRef Name="DcdMaKH" />
+      </Principal>
+      <Dependent Role="dcdSinhVien">
+        <PropertyRef Name="DcdMaKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DcdK22CNT4Lesson09DbModelStoreContainer">
+    <EntitySet Name="dcdKhoa" EntityType="Self.dcdKhoa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dcdMonHoc" EntityType="Self.dcdMonHoc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dcdSinhVien" EntityType="Self.dcdSinhVien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_dcdSinhVien_dcdKhoa" Association="Self.FK_dcdSinhVien_dcdKhoa">
+      <End Role="dcdKhoa" EntitySet="dcdKhoa" />
+      <End Role="dcdSinhVien" EntitySet="dcdSinhVien" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
