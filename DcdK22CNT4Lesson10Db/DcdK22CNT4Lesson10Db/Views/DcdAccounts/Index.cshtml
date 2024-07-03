@@ -1,0 +1,64 @@
+﻿@model IEnumerable<DcdK22CNT4Lesson10Db.Models.DcdAccount>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_DcdLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DcdUserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DcdPassword)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DcdFullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DcdEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DcdPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DcdActive)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DcdUserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DcdPassword)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DcdFullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DcdEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DcdPhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DcdActive)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DcdID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DcdID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DcdID })
+        </td>
+    </tr>
+}
+
+</table>

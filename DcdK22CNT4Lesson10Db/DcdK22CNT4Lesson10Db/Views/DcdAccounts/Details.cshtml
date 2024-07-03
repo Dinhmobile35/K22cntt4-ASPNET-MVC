@@ -1,0 +1,67 @@
+﻿@model DcdK22CNT4Lesson10Db.Models.DcdAccount
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_DcdLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DcdAccount</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DcdUserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DcdUserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DcdPassword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DcdPassword)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DcdFullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DcdFullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DcdEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DcdEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DcdPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DcdPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DcdActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DcdActive)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DcdID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
