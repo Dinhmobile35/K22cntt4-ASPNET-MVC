@@ -1,0 +1,55 @@
+﻿@model IEnumerable<DcdK22CNT4Lesson11_2210900095.Models.DcdCategory>
+
+@{
+    ViewBag.Title = "Danh mục sản phẩm";
+    Layout = "~/Views/Shared/_Dcd2210900095Layout.cshtml";
+}
+
+<h2>Danh mục sản phẩm</h2>
+
+<p>
+    @* @Html.ActionLink("Create New", "Create")*@
+</p>
+<a href="/DcdCategories/Create" class="btn btn-primary">Thêm mới</a>
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DcdID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DcdCateName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DcdStatus)
+        </th>
+        <th>Chức năng</th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.DcdID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DcdCateName)
+    </td>
+    <td>
+        @* @Html.DisplayFor(modelItem => item.DcdStatus)*@
+        @if (item.DcdStatus == true)
+        {
+            <span style="color:green"> hoạt động </span>
+        }
+        else
+        {
+            <span style="color:red"> Không hoạt động </span>
+        }
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.DcdID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.DcdID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.DcdID })
+    </td>
+</tr>
+}
+
+</table>

@@ -1,0 +1,72 @@
+﻿@model IEnumerable<DcdK22CNT4Lesson11_2210900095.Models.DcdProduct>
+
+@{
+    ViewBag.Title = "Danh Sách Sản Phẩm";
+    Layout = "~/Views/Shared/_Dcd2210900095Layout.cshtml";
+}
+
+<h2>Danh Sách Sản Phẩm</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DcdId2210900095)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DcdProName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DcdQty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DcdPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DcdActive)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DcdCategory.DcdCateName)
+        </th>
+        <th>Chức Năng</th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.DcdId2210900095)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DcdProName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DcdQty)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DcdPrice)
+    </td>
+    <td>
+        @* @Html.DisplayFor(modelItem => item.DcdActive)*@
+        @if (item.DcdActive == true)
+        {
+            <span style="color:green"> hoạt động </span>
+        }
+        else
+        {
+            <span style="color:red"> Không hoạt động </span>
+        }
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DcdCategory.DcdCateName)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.DcdId2210900095 }) |
+        @Html.ActionLink("Details", "Details", new { id = item.DcdId2210900095 }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.DcdId2210900095 })
+    </td>
+</tr>
+}
+
+</table>

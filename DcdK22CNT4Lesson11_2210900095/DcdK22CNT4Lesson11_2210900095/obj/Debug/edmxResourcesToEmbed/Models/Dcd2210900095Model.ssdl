@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DcdK22CNT4Lesson11DbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DcdCategory">
+    <Key>
+      <PropertyRef Name="DcdID" />
+    </Key>
+    <Property Name="DcdID" Type="int" Nullable="false" />
+    <Property Name="DcdCateName" Type="nvarchar" MaxLength="50" />
+    <Property Name="DcdStatus" Type="bit" />
+  </EntityType>
+  <EntityType Name="DcdProduct">
+    <Key>
+      <PropertyRef Name="DcdId2210900095" />
+    </Key>
+    <Property Name="DcdId2210900095" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DcdProName" Type="nvarchar" MaxLength="50" />
+    <Property Name="DcdQty" Type="int" />
+    <Property Name="DcdPrice" Type="float" />
+    <Property Name="DcdCateId" Type="int" />
+    <Property Name="DcdActive" Type="bit" />
+  </EntityType>
+  <Association Name="FK_DcdProduct_DcdCategory">
+    <End Role="DcdCategory" Type="Self.DcdCategory" Multiplicity="0..1" />
+    <End Role="DcdProduct" Type="Self.DcdProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DcdCategory">
+        <PropertyRef Name="DcdID" />
+      </Principal>
+      <Dependent Role="DcdProduct">
+        <PropertyRef Name="DcdCateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DcdK22CNT4Lesson11DbModelStoreContainer">
+    <EntitySet Name="DcdCategory" EntityType="Self.DcdCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DcdProduct" EntityType="Self.DcdProduct" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_DcdProduct_DcdCategory" Association="Self.FK_DcdProduct_DcdCategory">
+      <End Role="DcdCategory" EntitySet="DcdCategory" />
+      <End Role="DcdProduct" EntitySet="DcdProduct" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

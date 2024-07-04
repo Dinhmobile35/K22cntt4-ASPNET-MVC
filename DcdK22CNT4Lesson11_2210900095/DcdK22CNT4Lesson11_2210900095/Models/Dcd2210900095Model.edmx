@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DcdK22CNT4Lesson11DbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DcdCategory">
+          <Key>
+            <PropertyRef Name="DcdID" />
+          </Key>
+          <Property Name="DcdID" Type="int" Nullable="false" />
+          <Property Name="DcdCateName" Type="nvarchar" MaxLength="50" />
+          <Property Name="DcdStatus" Type="bit" />
+        </EntityType>
+        <EntityType Name="DcdProduct">
+          <Key>
+            <PropertyRef Name="DcdId2210900095" />
+          </Key>
+          <Property Name="DcdId2210900095" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DcdProName" Type="nvarchar" MaxLength="50" />
+          <Property Name="DcdQty" Type="int" />
+          <Property Name="DcdPrice" Type="float" />
+          <Property Name="DcdCateId" Type="int" />
+          <Property Name="DcdActive" Type="bit" />
+        </EntityType>
+        <Association Name="FK_DcdProduct_DcdCategory">
+          <End Role="DcdCategory" Type="Self.DcdCategory" Multiplicity="0..1" />
+          <End Role="DcdProduct" Type="Self.DcdProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DcdCategory">
+              <PropertyRef Name="DcdID" />
+            </Principal>
+            <Dependent Role="DcdProduct">
+              <PropertyRef Name="DcdCateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DcdK22CNT4Lesson11DbModelStoreContainer">
+          <EntitySet Name="DcdCategory" EntityType="Self.DcdCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DcdProduct" EntityType="Self.DcdProduct" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_DcdProduct_DcdCategory" Association="Self.FK_DcdProduct_DcdCategory">
+            <End Role="DcdCategory" EntitySet="DcdCategory" />
+            <End Role="DcdProduct" EntitySet="DcdProduct" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DcdK22CNT4Lesson11DbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="DcdCategory">
+          <Key>
+            <PropertyRef Name="DcdID" />
+          </Key>
+          <Property Name="DcdID" Type="Int32" Nullable="false" />
+          <Property Name="DcdCateName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DcdStatus" Type="Boolean" />
+          <NavigationProperty Name="DcdProduct" Relationship="Self.FK_DcdProduct_DcdCategory" FromRole="DcdCategory" ToRole="DcdProduct" />
+        </EntityType>
+        <EntityType Name="DcdProduct">
+          <Key>
+            <PropertyRef Name="DcdId2210900095" />
+          </Key>
+          <Property Name="DcdId2210900095" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DcdProName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DcdQty" Type="Int32" />
+          <Property Name="DcdPrice" Type="Double" />
+          <Property Name="DcdCateId" Type="Int32" />
+          <Property Name="DcdActive" Type="Boolean" />
+          <NavigationProperty Name="DcdCategory" Relationship="Self.FK_DcdProduct_DcdCategory" FromRole="DcdProduct" ToRole="DcdCategory" />
+        </EntityType>
+        <Association Name="FK_DcdProduct_DcdCategory">
+          <End Role="DcdCategory" Type="Self.DcdCategory" Multiplicity="0..1" />
+          <End Role="DcdProduct" Type="Self.DcdProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DcdCategory">
+              <PropertyRef Name="DcdID" />
+            </Principal>
+            <Dependent Role="DcdProduct">
+              <PropertyRef Name="DcdCateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DcdK22CNT4Lesson11DbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DcdCategory" EntityType="Self.DcdCategory" />
+          <EntitySet Name="DcdProduct" EntityType="Self.DcdProduct" />
+          <AssociationSet Name="FK_DcdProduct_DcdCategory" Association="Self.FK_DcdProduct_DcdCategory">
+            <End Role="DcdCategory" EntitySet="DcdCategory" />
+            <End Role="DcdProduct" EntitySet="DcdProduct" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DcdK22CNT4Lesson11DbModelStoreContainer" CdmEntityContainer="DcdK22CNT4Lesson11DbEntities">
+          <EntitySetMapping Name="DcdCategory">
+            <EntityTypeMapping TypeName="DcdK22CNT4Lesson11DbModel.DcdCategory">
+              <MappingFragment StoreEntitySet="DcdCategory">
+                <ScalarProperty Name="DcdID" ColumnName="DcdID" />
+                <ScalarProperty Name="DcdCateName" ColumnName="DcdCateName" />
+                <ScalarProperty Name="DcdStatus" ColumnName="DcdStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DcdProduct">
+            <EntityTypeMapping TypeName="DcdK22CNT4Lesson11DbModel.DcdProduct">
+              <MappingFragment StoreEntitySet="DcdProduct">
+                <ScalarProperty Name="DcdId2210900095" ColumnName="DcdId2210900095" />
+                <ScalarProperty Name="DcdProName" ColumnName="DcdProName" />
+                <ScalarProperty Name="DcdQty" ColumnName="DcdQty" />
+                <ScalarProperty Name="DcdPrice" ColumnName="DcdPrice" />
+                <ScalarProperty Name="DcdCateId" ColumnName="DcdCateId" />
+                <ScalarProperty Name="DcdActive" ColumnName="DcdActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

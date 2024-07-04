@@ -1,0 +1,59 @@
+﻿@model DcdK22CNT4Lesson11_2210900095.Models.DcdProduct
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Dcd2210900095Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DcdProduct</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DcdProName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DcdProName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DcdQty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DcdQty)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DcdPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DcdPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DcdActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DcdActive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DcdCategory.DcdCateName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DcdCategory.DcdCateName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DcdId2210900095 }) |
+    @Html.ActionLink("Back to List", "DcdIndex")
+</p>

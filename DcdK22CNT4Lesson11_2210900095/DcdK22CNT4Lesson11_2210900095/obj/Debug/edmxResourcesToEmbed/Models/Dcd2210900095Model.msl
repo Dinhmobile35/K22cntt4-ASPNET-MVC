@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DcdK22CNT4Lesson11DbModelStoreContainer" CdmEntityContainer="DcdK22CNT4Lesson11DbEntities">
+    <EntitySetMapping Name="DcdCategory">
+      <EntityTypeMapping TypeName="DcdK22CNT4Lesson11DbModel.DcdCategory">
+        <MappingFragment StoreEntitySet="DcdCategory">
+          <ScalarProperty Name="DcdID" ColumnName="DcdID" />
+          <ScalarProperty Name="DcdCateName" ColumnName="DcdCateName" />
+          <ScalarProperty Name="DcdStatus" ColumnName="DcdStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DcdProduct">
+      <EntityTypeMapping TypeName="DcdK22CNT4Lesson11DbModel.DcdProduct">
+        <MappingFragment StoreEntitySet="DcdProduct">
+          <ScalarProperty Name="DcdId2210900095" ColumnName="DcdId2210900095" />
+          <ScalarProperty Name="DcdProName" ColumnName="DcdProName" />
+          <ScalarProperty Name="DcdQty" ColumnName="DcdQty" />
+          <ScalarProperty Name="DcdPrice" ColumnName="DcdPrice" />
+          <ScalarProperty Name="DcdCateId" ColumnName="DcdCateId" />
+          <ScalarProperty Name="DcdActive" ColumnName="DcdActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
