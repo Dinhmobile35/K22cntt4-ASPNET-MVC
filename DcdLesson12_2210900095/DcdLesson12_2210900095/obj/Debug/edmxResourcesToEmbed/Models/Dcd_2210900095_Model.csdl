@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DinhCongDinh_2210900095Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="DCD_SACH">
+    <Key>
+      <PropertyRef Name="Dcd_MaSach" />
+    </Key>
+    <Property Name="Dcd_MaSach" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Dcd_TenSach" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Dcd_SoTrang" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Dcd_NamXB" Type="DateTime" Precision="0" />
+    <Property Name="Dcd_MaTG" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Dcd_TrangThai" Type="Boolean" />
+    <NavigationProperty Name="DCD_TACGIA" Relationship="Self.FK_Dcd_SACH_Dcd_TACGIA" FromRole="DCD_SACH" ToRole="DCD_TACGIA" />
+  </EntityType>
+  <EntityType Name="DCD_TACGIA">
+    <Key>
+      <PropertyRef Name="Dcd_MaTG" />
+    </Key>
+    <Property Name="Dcd_MaTG" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Dcd_TenTG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DCD_SACH" Relationship="Self.FK_Dcd_SACH_Dcd_TACGIA" FromRole="DCD_TACGIA" ToRole="DCD_SACH" />
+  </EntityType>
+  <Association Name="FK_Dcd_SACH_Dcd_TACGIA">
+    <End Role="DCD_TACGIA" Type="Self.DCD_TACGIA" Multiplicity="0..1" />
+    <End Role="DCD_SACH" Type="Self.DCD_SACH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DCD_TACGIA">
+        <PropertyRef Name="Dcd_MaTG" />
+      </Principal>
+      <Dependent Role="DCD_SACH">
+        <PropertyRef Name="Dcd_MaTG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DinhCongDinh_2210900095Entities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DCD_SACH" EntityType="Self.DCD_SACH" />
+    <EntitySet Name="DCD_TACGIA" EntityType="Self.DCD_TACGIA" />
+    <AssociationSet Name="FK_Dcd_SACH_Dcd_TACGIA" Association="Self.FK_Dcd_SACH_Dcd_TACGIA">
+      <End Role="DCD_TACGIA" EntitySet="DCD_TACGIA" />
+      <End Role="DCD_SACH" EntitySet="DCD_SACH" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,39 @@
+﻿@model IEnumerable<DcdLesson12_2210900095.Models.DCD_TACGIA>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "DcdCreate")
+</p>
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Dcd_MaTG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dcd_TenTG)
+        </th>
+        <th>Chức năng</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dcd_MaTG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dcd_TenTG)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "DcdEdit", new { id=item.Dcd_MaTG.Trim() }, new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Details", "DcdDetails", new { id = item.Dcd_MaTG.Trim() }, new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Delete", "DcdDelete", new { id = item.Dcd_MaTG.Trim() }, new { @class = "btn btn-primary" })
+        </td>
+    </tr>
+}
+
+</table>

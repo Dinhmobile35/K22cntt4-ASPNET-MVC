@@ -1,0 +1,59 @@
+﻿@model DcdLesson12_2210900095.Models.DCD_SACH
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DCD_SACH</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Dcd_TenSach)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dcd_TenSach)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dcd_SoTrang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dcd_SoTrang)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dcd_NamXB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dcd_NamXB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dcd_TrangThai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dcd_TrangThai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DCD_TACGIA.Dcd_TenTG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DCD_TACGIA.Dcd_TenTG)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Dcd" +
+    "Edit", new { id = Model.Dcd_MaSach.Trim() }, new { @class = "btn btn-primary" }) |
+    @Html.ActionLink("Back to List", "DcdIndex", null, new { @class = "btn btn-primary" })
+</p>

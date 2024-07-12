@@ -1,0 +1,32 @@
+﻿@model DcdLesson12_2210900095.Models.DCD_TACGIA
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DCD_TACGIA</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Dcd_MaTG)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Dcd_TenTG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dcd_MaTG)
+        </dd>
+        <dd>
+            @Html.DisplayFor(model => model.Dcd_TenTG)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "DcdEdit", new { id = Model.Dcd_MaTG.Trim() }, new { @class = "btn btn-primary" } ) |
+    @Html.ActionLink("Back to List", "DcdIndex", null, new { @class = "btn btn-primary" })
+</p>

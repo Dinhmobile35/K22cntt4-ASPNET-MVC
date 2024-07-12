@@ -1,0 +1,61 @@
+﻿@model IEnumerable<DcdLesson12_2210900095.Models.DCD_SACH>
+
+@{
+    ViewBag.Title = "Hiển thị danh sách: Sách";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "DcdCreate", null , new { @class = "btn btn-primary" }) 
+</p>
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Dcd_TenSach)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dcd_SoTrang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dcd_NamXB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dcd_TrangThai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DCD_TACGIA.Dcd_TenTG)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dcd_TenSach)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dcd_SoTrang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dcd_NamXB)
+        </td>
+        <td>
+            @if( item.Dcd_TrangThai==true) {
+                <p>Hoạt động</p>
+            }else {
+                <p>Không hoạt động</p>
+            }
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DCD_TACGIA.Dcd_TenTG)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "DcdEdit", new { id = item.Dcd_MaSach.Trim() }, new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Details", "DcdDetails", new { id = item.Dcd_MaSach.Trim() }, new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Delete", "DcdDelete", new { id = item.Dcd_MaSach.Trim() }, new { @class = "btn btn-primary" }) 
+        </td>
+    </tr>
+}
+
+</table>

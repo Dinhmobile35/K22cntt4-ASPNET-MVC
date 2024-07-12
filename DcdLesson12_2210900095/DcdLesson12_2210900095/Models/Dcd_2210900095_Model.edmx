@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DinhCongDinh_2210900095Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DCD_SACH">
+          <Key>
+            <PropertyRef Name="Dcd_MaSach" />
+          </Key>
+          <Property Name="Dcd_MaSach" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Dcd_TenSach" Type="nvarchar" MaxLength="50" />
+          <Property Name="Dcd_SoTrang" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Dcd_NamXB" Type="date" />
+          <Property Name="Dcd_MaTG" Type="nchar" MaxLength="10" />
+          <Property Name="Dcd_TrangThai" Type="bit" />
+        </EntityType>
+        <EntityType Name="DCD_TACGIA">
+          <Key>
+            <PropertyRef Name="Dcd_MaTG" />
+          </Key>
+          <Property Name="Dcd_MaTG" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Dcd_TenTG" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Dcd_SACH_Dcd_TACGIA">
+          <End Role="DCD_TACGIA" Type="Self.DCD_TACGIA" Multiplicity="0..1" />
+          <End Role="DCD_SACH" Type="Self.DCD_SACH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DCD_TACGIA">
+              <PropertyRef Name="Dcd_MaTG" />
+            </Principal>
+            <Dependent Role="DCD_SACH">
+              <PropertyRef Name="Dcd_MaTG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DinhCongDinh_2210900095ModelStoreContainer">
+          <EntitySet Name="DCD_SACH" EntityType="Self.DCD_SACH" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DCD_TACGIA" EntityType="Self.DCD_TACGIA" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Dcd_SACH_Dcd_TACGIA" Association="Self.FK_Dcd_SACH_Dcd_TACGIA">
+            <End Role="DCD_TACGIA" EntitySet="DCD_TACGIA" />
+            <End Role="DCD_SACH" EntitySet="DCD_SACH" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DinhCongDinh_2210900095Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="DCD_SACH">
+          <Key>
+            <PropertyRef Name="Dcd_MaSach" />
+          </Key>
+          <Property Name="Dcd_MaSach" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Dcd_TenSach" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Dcd_SoTrang" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Dcd_NamXB" Type="DateTime" Precision="0" />
+          <Property Name="Dcd_MaTG" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Dcd_TrangThai" Type="Boolean" />
+          <NavigationProperty Name="DCD_TACGIA" Relationship="Self.FK_Dcd_SACH_Dcd_TACGIA" FromRole="DCD_SACH" ToRole="DCD_TACGIA" />
+        </EntityType>
+        <EntityType Name="DCD_TACGIA">
+          <Key>
+            <PropertyRef Name="Dcd_MaTG" />
+          </Key>
+          <Property Name="Dcd_MaTG" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Dcd_TenTG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DCD_SACH" Relationship="Self.FK_Dcd_SACH_Dcd_TACGIA" FromRole="DCD_TACGIA" ToRole="DCD_SACH" />
+        </EntityType>
+        <Association Name="FK_Dcd_SACH_Dcd_TACGIA">
+          <End Role="DCD_TACGIA" Type="Self.DCD_TACGIA" Multiplicity="0..1" />
+          <End Role="DCD_SACH" Type="Self.DCD_SACH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DCD_TACGIA">
+              <PropertyRef Name="Dcd_MaTG" />
+            </Principal>
+            <Dependent Role="DCD_SACH">
+              <PropertyRef Name="Dcd_MaTG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DinhCongDinh_2210900095Entities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DCD_SACH" EntityType="Self.DCD_SACH" />
+          <EntitySet Name="DCD_TACGIA" EntityType="Self.DCD_TACGIA" />
+          <AssociationSet Name="FK_Dcd_SACH_Dcd_TACGIA" Association="Self.FK_Dcd_SACH_Dcd_TACGIA">
+            <End Role="DCD_TACGIA" EntitySet="DCD_TACGIA" />
+            <End Role="DCD_SACH" EntitySet="DCD_SACH" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DinhCongDinh_2210900095ModelStoreContainer" CdmEntityContainer="DinhCongDinh_2210900095Entities2">
+          <EntitySetMapping Name="DCD_SACH">
+            <EntityTypeMapping TypeName="DinhCongDinh_2210900095Model.DCD_SACH">
+              <MappingFragment StoreEntitySet="DCD_SACH">
+                <ScalarProperty Name="Dcd_MaSach" ColumnName="Dcd_MaSach" />
+                <ScalarProperty Name="Dcd_TenSach" ColumnName="Dcd_TenSach" />
+                <ScalarProperty Name="Dcd_SoTrang" ColumnName="Dcd_SoTrang" />
+                <ScalarProperty Name="Dcd_NamXB" ColumnName="Dcd_NamXB" />
+                <ScalarProperty Name="Dcd_MaTG" ColumnName="Dcd_MaTG" />
+                <ScalarProperty Name="Dcd_TrangThai" ColumnName="Dcd_TrangThai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DCD_TACGIA">
+            <EntityTypeMapping TypeName="DinhCongDinh_2210900095Model.DCD_TACGIA">
+              <MappingFragment StoreEntitySet="DCD_TACGIA">
+                <ScalarProperty Name="Dcd_MaTG" ColumnName="Dcd_MaTG" />
+                <ScalarProperty Name="Dcd_TenTG" ColumnName="Dcd_TenTG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
